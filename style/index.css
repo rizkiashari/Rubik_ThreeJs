@@ -4,6 +4,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  background-image: url("https://th-thumbnailer.cdn-si-edu.com/LSkrjTVSI9TCaSHfuyT6FDaIAKg=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/8d/1c/8d1cc7cc-4e7a-48fd-ba01-c6a30f273e3a/gettyimages-153408104.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .content {
@@ -18,15 +21,19 @@ body {
 .sub-content {
   padding: 10px 20px;
   border-radius: 8px;
+  background-color: #fff;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  height: 130px;
+  justify-content: center;
+  height: 150px;
+  width: 350px;
 }
 
 .sub-content h3 {
   color: #222222;
+  font-size: 20px;
 }
 
 .button {
