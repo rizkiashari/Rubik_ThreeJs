@@ -1,4 +1,8 @@
-let camera, scene, renderer, light, ambient;
+import * as THREE from "../../three.js-master/build/three.module.js";
+
+import { OrbitControls } from "../../three.js-master/examples/jsm/controls/OrbitControls.js";
+
+let camera, scene, renderer, light, ambient, controls;
 
 let cube = [];
 let cube_to_rotate = [];
@@ -34,15 +38,37 @@ const doInit = () => {
 
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(WIDTH, HEIGHT);
-  renderer.setClearColor(0x303030);
+  renderer.setClearColor(0x111545);
   renderer.shadowMap.enabled = true;
+
+  light = initLight();
+  ambient = initAmbient();
+
+  scene.add(light);
+  scene.add(ambient);
+
+  controls = new OrbitControls(camera, renderer.domElement);
+
+  controls.update();
 
   document.body.appendChild(renderer.domElement);
 };
 
-var doRender = () => {
-  requestAnimationFrame(doRender);
+const initLight = () => {
+  const light = new THREE.PointLight(0xffffff);
+  light.position.set(400, 200, 300);
 
+  return light;
+};
+
+const initAmbient = () => {
+  const ambient = new THREE.AmbientLight(0x555555);
+  return ambient;
+};
+
+const doRender = () => {
+  requestAnimationFrame(doRender);
+  controls.update();
   renderer.render(scene, camera);
 };
 
