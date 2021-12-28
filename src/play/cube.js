@@ -191,10 +191,6 @@ class Cube {
 
   rotationMatrixHelper = (i, j, direction = "clockwise") => {
     const translationOffset = (this.order - 1) / 2;
-    // Pivot point rotation
-    // Translate to -offset
-    // x' = -y and y' = x;
-    // Translate back to +offset
     const translatedI = i - translationOffset;
     const translatedJ = j - translationOffset;
 
