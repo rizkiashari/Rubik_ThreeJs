@@ -3,6 +3,8 @@ var minutes = 0;
 var seconds = 0;
 var interval = null;
 
+let isPlaying = false;
+
 document.getElementById('hours').addEventListener('change', e => {
     hours = +e.target.value;
 });
@@ -17,7 +19,10 @@ document.getElementById('seconds').addEventListener('change', e => {
 
 document.getElementById('startTimer').addEventListener('click', () => {
     
+    document.querySelector(".backgrounds").style.display = "none";
+    document.querySelector(".input-timer").style.display = "none";
     shuffle();
+    isPlaying = true;
     
     var timeInSeconds = (hours * 60 * 60) +
         (minutes * 60) +
@@ -39,6 +44,20 @@ document.getElementById('startTimer').addEventListener('click', () => {
         timeInSeconds -= 1;
         if (timeInSeconds < 0) {
             clearInterval(interval);
+            isPlaying = false;
+            setTimeout(() => {
+                document.querySelector(".backgrounds").style.display = "flex";
+                document.querySelector(".input-timer").style.display = "flex";
+                document.getElementById("status").innerHTML = "Game Over";
+            },5000)
+        }else if(cube.checkGameStatus()){
+            clearInterval(interval);
+            isPlaying = false;
+            setTimeout(() => {
+                document.querySelector(".backgrounds").style.display = "flex";
+                document.querySelector(".input-timer").style.display = "flex";
+                document.getElementById("status").innerHTML = "You Win";
+            },1000)
         }
     }, 1000);
 

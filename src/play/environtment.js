@@ -298,11 +298,11 @@ function onMouseUp(event) {
       rotationDirection =
         rotationDirection == "clockwise" ? "anti" : "clockwise";
     }
-    if (!cube.shuffling) {
+    if (!cube.shuffling && isPlaying) {
       cube.rotateSclice(rotationAxis, rotationIndex, rotationDirection);
-      setTimeout(() => {
-        if (cube.checkGameStatus()) cube.showCongrats();
-      }, 500);
+      // setTimeout(() => {
+      //   if (cube.checkGameStatus()) cube.showCongrats();
+      // }, 500);
     }
   }
   dragStart = undefined;
@@ -383,11 +383,11 @@ function touchEnd(event) {
       rotationDirection =
         rotationDirection == "clockwise" ? "anti" : "clockwise";
     }
-    if (!cube.shuffling) {
+    if (!cube.shuffling && isPlaying) {
       cube.rotateSclice(rotationAxis, rotationIndex, rotationDirection);
-      setTimeout(() => {
-        if (cube.checkGameStatus()) cube.showCongrats();
-      }, 500);
+      // setTimeout(() => {
+      //   if (cube.checkGameStatus()) cube.showCongrats();
+      // }, 500);
     }
   }
   dragStart = undefined;
