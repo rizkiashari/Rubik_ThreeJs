@@ -1,7 +1,5 @@
 const degree = (rad) => (rad * Math.PI) / 180;
 
-
-
 class Cube {
   constructor(order) {
     if (order > 10) throw new Error("Maximum cube size exceeded!");

@@ -462,7 +462,7 @@ class Cube {
   };
 }
 
-var query = location.search
+let query = location.search
   .replace("?", "")
   .replace(/&&/g, "&")
   .split("&")

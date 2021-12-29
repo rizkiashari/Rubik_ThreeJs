@@ -1,7 +1,7 @@
-var hours = 0;
-var minutes = 0;
-var seconds = 0;
-var interval = null;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+let interval = null;
 
 let isPlaying = false;
 
@@ -23,13 +23,13 @@ document.getElementById("startTimer").addEventListener("click", () => {
   shuffle();
   isPlaying = true;
 
-  var timeInSeconds = hours * 60 * 60 + minutes * 60 + seconds;
+  let timeInSeconds = hours * 60 * 60 + minutes * 60 + seconds;
 
-  var displayTime = () => {
-    var displayHours = Math.floor(timeInSeconds / (60 * 60));
-    var remainder = timeInSeconds - displayHours * 60 * 60;
-    var displayMinutes = Math.floor(remainder / 60);
-    var displaySeconds = remainder - displayMinutes * 60;
+  let displayTime = () => {
+    let displayHours = Math.floor(timeInSeconds / (60 * 60));
+    let remainder = timeInSeconds - displayHours * 60 * 60;
+    let displayMinutes = Math.floor(remainder / 60);
+    let displaySeconds = remainder - displayMinutes * 60;
 
     setTimeout(() => {
       document.getElementById("timer").innerHTML =
@@ -50,6 +50,7 @@ document.getElementById("startTimer").addEventListener("click", () => {
         document.querySelector(".input-timer").style.display = "flex";
         document.getElementById("status").innerHTML = "Game Over";
         document.getElementById("timer").style.color = "white";
+        document.getElementById("timer").innerHTML = "00 : 00 : 00";
       }, 5000);
     } else if (cube.checkGameStatus()) {
       clearInterval(interval);
@@ -59,6 +60,8 @@ document.getElementById("startTimer").addEventListener("click", () => {
         document.querySelector(".input-timer").style.display = "flex";
         document.getElementById("status").innerHTML = "You Win";
         document.getElementById("timer").style.color = "white";
+        document.getElementById("hasil").innerHTML = timeInSeconds;
+        document.getElementById("timer").innerHTML = "00 : 00 : 00";
       }, 1000);
     }
   }, 1000);

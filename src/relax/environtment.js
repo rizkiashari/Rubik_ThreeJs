@@ -1,4 +1,4 @@
-var checker = {
+let checker = {
   Windows: function Windows() {
     return (
       navigator.userAgent.match(/IEMobile/i) ||
@@ -10,7 +10,7 @@ var checker = {
   },
 };
 
-var isMobile = checker.any();
+let isMobile = checker.any();
 
 document.addEventListener(
   "DOMContentLoaded",
