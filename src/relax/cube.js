@@ -225,9 +225,9 @@ class Cube {
     }, 600);
   };
 
-  showCongrats = () => {
-    if (confirm("Congrats..! Do you want to shuffle?")) shuffle();
-  };
+  // showCongrats = () => {
+  //   if (confirm("Congrats..! Do you want to shuffle?")) shuffle();
+  // };
 
   mergeSlice = ({ initial = false, data }) => {
     if (initial) {

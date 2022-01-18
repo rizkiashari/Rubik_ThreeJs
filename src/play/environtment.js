@@ -22,11 +22,11 @@ var isMobile = checker.any();
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    document.getElementById("btn").style.margin = "10px 3%";
-    document.getElementById("btn").style.width = "94%";
-    document.getElementById("btn").style.height = "10vh";
-    document.getElementById("btn").style.opacity = "0.4";
-    document.getElementById("btn").style.fontSize = "50px";
+    // document.getElementById("btn").style.margin = "10px 3%";
+    // document.getElementById("btn").style.width = "94%";
+    // document.getElementById("btn").style.height = "10vh";
+    // document.getElementById("btn").style.opacity = "0.4";
+    // document.getElementById("btn").style.fontSize = "50px";
   },
   false
 );
@@ -415,7 +415,7 @@ function mouseMove(event) {
 }
 
 function touchMove(event) {
-  if (mouseEventLimit < 0 || dragStart) {
+  if (mouseEventLimit < x0 || dragStart) {
     mouse.x = (event.changedTouches[0].clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.changedTouches[0].clientY / window.innerHeight) * 2 + 1;
     raycaster.setFromCamera(mouse, camera);
